@@ -5,7 +5,7 @@ def get_home_dashboard():
     return html.Div([
         html.Div([
             html.H2("Driver with the most wins :"),
-            card(title="Corentin Delaporte", id="most-wins")
+            card(title="Niki Lauda", id="most-wins")
         ]),
 
         html.Div([
