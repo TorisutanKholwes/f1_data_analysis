@@ -711,3 +711,7 @@ button.btn-primary:hover, .btn-primary:hover {
 .dash-dropdown-content {
     background: var(--f1-surface-2); !important;
 }
+
+#authors, #footer {
+  text-align: center;
+}

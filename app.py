@@ -11,6 +11,7 @@ app = Dash(__name__,
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.H1('F1 Dashboard'),
+    html.H2("By Axelis Burnier-Framboret, Tristan Clowez and Corentin Delaporte", id="authors"),
     html.Nav(
         html.Ul([
             html.Li(html.A('Home', href='/')),
@@ -21,5 +22,9 @@ app.layout = html.Div([
     html.Div(
         className="main-content",
         children=html.Div(id="page-content")
-    )
+    ),
+    html.Footer([
+        html.A("Go to github repository", href="https://github.com/TorisutanKholwes/f1_data_analysis"),
+        html.P('Powered by Dash and Plotly. Data sourced from Kaggle.'),
+    ], id="footer")
 ])
