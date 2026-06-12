@@ -32,4 +32,8 @@ if __name__ == '__main__':
     dash_host=os.getenv("DASH_HOST", "localhost")
     dash_port=os.getenv("DASH_PORT", "8050")
     debugging=os.getenv("DEBUGGING", "False")
+    print("Launching app with the following configuration:")
+    print(f"DASH_HOST: {dash_host}")
+    print(f"DASH_PORT: {dash_port}")
+    print(f"DEBUGGING: {debugging}")
     app.run(jupyter_mode='external', debug=debugging.lower()=="true", host=dash_host, port=dash_port)
