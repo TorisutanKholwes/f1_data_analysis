@@ -75,12 +75,14 @@ header::before, nav::before, .navbar::before {
 
 h1, .site-title {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--f1-text);
   text-decoration: none;
+  text-align: center;
+  padding-top: 1rem;
   flex-shrink: 0;
 }
 
@@ -101,7 +103,7 @@ nav ul, .navbar ul {
 nav ul li a, .navbar ul li a,
 nav a, .nav-link {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -372,7 +374,7 @@ td.pos-3 { color: #CD7F32; font-weight: 600; }
 .badge-white { background: rgba(255,255,255,0.08); color: var(--f1-text); }
 
 /* ─── DROPDOWNS & SELECTS ─── */
-select, .Select-control, .dash-dropdown .Select-control {
+select, .Select-control, .dash-dropdown .e  lt-dropdown .Select-control {
   background: var(--f1-surface-2) !important;
   border: 1px solid var(--f1-border-med) !important;
   border-radius: var(--radius-sm) !important;
@@ -385,11 +387,11 @@ select, .Select-control, .dash-dropdown .Select-control {
   transition: border-color 0.15s;
 }
 
-select:hover, .Select-control:hover, .dash-dropdown .Select-control:hover {
+select:hover, .Select-control:hover, .dash-dropdown .elt-dropdown .Select-control:hover {
   border-color: rgba(232,0,45,0.4) !important;
 }
 
-select:focus, .Select-control.is-focused, .dash-dropdown .Select-control.is-focused {
+select:focus, .Select-control.is-focused, .dash-dropdown .elt-dropdown .Select-control.is-focused {
   border-color: var(--f1-red) !important;
   box-shadow: 0 0 0 3px rgba(232,0,45,0.1) !important;
 }
@@ -448,6 +450,7 @@ button, .btn {
   border: 1px solid var(--f1-border-med);
   background: transparent;
   color: var(--f1-text-muted);
+  background: var(--f1-surface-2); !important;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -689,4 +692,22 @@ button.btn-primary:hover, .btn-primary:hover {
 
 .zerolinelayer line {
   stroke: var(--f1-border-med) !important;
+}
+
+.dash-card {
+  background: #1f1f1f;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.dash-options-list-option-text {
+  color: var(--f1-text)
+}
+
+#track-dropdown, #driver-dropdown, #time-per-lap-track {
+    background: var(--f1-surface-2); !important;
+}
+
+.dash-dropdown-content {
+    background: var(--f1-surface-2); !important;
 }

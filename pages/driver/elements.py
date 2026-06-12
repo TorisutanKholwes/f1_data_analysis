@@ -1,11 +1,12 @@
 from dash import html
-from components.graph import *
+from components.elements import *
 from data import drivers_list, track_list
 
 def get_driver_dashboard():
     return html.Div([
         dcc.Dropdown(
             id='driver-dropdown',
+            className='elt-dropdown',
             options=drivers_list,
             value=drivers_list[0],
         ),

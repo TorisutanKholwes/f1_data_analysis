@@ -1,6 +1,5 @@
 import plotly.express as px
 from dash import Input, Output
-from plotly.graph_objs.layout.scene import yaxis
 
 from app import app
 from data import f1_data
@@ -100,6 +99,7 @@ def update_graph(name):
                 "Average Lap: %{customdata[0]}<extra></extra>"
             )
 
+    fig.update_layout(showlegend=False)
 
     return fig
 
@@ -158,6 +158,8 @@ def update_graph(name, track):
                 best_lap[i] = time
             else:
                 updated.loc[current.index, f"{sector}_color"] = 'red'
+            updated.loc[current.index, f"{sector}_best"] = get_best_time_on_sector(track, lap, sector)
+            updated.loc[current.index, f"{sector}_personal_best"] = best_lap[i]
             i += 1
 
 
@@ -167,23 +169,29 @@ def update_graph(name, track):
         x=updated["lapnumber"],
         y=updated["sector1"],
         name="sector1",
-        marker_color=updated["sector1_color"]
+        marker_color=updated["sector1_color"],
+        customdata=updated[["sector1_best", "sector1_personal_best"]].to_numpy(),
+        hovertemplate="Sector 1 <br>Lap %{x}<br>Time : %{y}<br>Personal best: %{customdata[1]}<br>Best : %{customdata[0]}<extra></extra>",
     )
 
     fig.add_bar(
         x=updated["lapnumber"],
         y=updated["sector2"],
         name="sector2",
-        marker_color=updated["sector2_color"]
+        marker_color=updated["sector2_color"],
+        customdata=updated[["sector2_best", "sector2_personal_best"]].to_numpy(),
+        hovertemplate="Sector 2 <br>Lap %{x}<br>Time : %{y}<br>Personal best: %{customdata[1]}<br>Best : %{customdata[0]}<extra></extra>",
     )
 
     fig.add_bar(
         x=updated["lapnumber"],
         y=updated["sector3"],
         name="sector3",
-        marker_color=updated["sector3_color"]
+        marker_color=updated["sector3_color"],
+        customdata=updated[["sector3_best", "sector3_personal_best"]].to_numpy(),
+        hovertemplate="Sector 3 <br>Lap %{x}<br>Time : %{y}<br>Personal best: %{customdata[1]}<br>Best : %{customdata[0]}<extra></extra>",
     )
 
-    fig.update_layout(barmode="stack")
+    fig.update_layout(barmode="stack", showlegend=False)
 
     return fig

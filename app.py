@@ -13,10 +13,9 @@ app.layout = html.Div([
     html.H1('F1 Dashboard'),
     html.Nav(
         html.Ul([
-            html.Li(html.A('Home', href='#')),
+            html.Li(html.A('Home', href='/')),
             html.Li(html.A('Track', href='/track')),
             html.Li(html.A('Driver', href='/driver')),
-            html.Li(html.A('Team', href='/team')),
         ])
     ),
     html.Div(
