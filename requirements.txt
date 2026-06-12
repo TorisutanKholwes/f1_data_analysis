@@ -1,0 +1,16 @@
+ipykernel
+jupyter
+jupyterlab
+numpy
+pandas
+altair
+vega_datasets
+vl-convert-python
+vegafusion
+pyarrow
+scikit-learn
+matplotlib
+dash
+openpyxl
+plotly
+textblob
