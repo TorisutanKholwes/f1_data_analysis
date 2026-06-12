@@ -6,6 +6,8 @@ from pages.home import get_home_dashboard
 from pages.team import get_team_dashboard
 from pages.track import get_track_dashboard
 
+import os
+
 import pages.driver.graph
 
 
@@ -27,4 +29,7 @@ def display_page(pathname):
 
 
 if __name__ == '__main__':
-    app.run(jupyter_mode='external', debug=True)
+    dash_host=os.getenv("DASH_HOST", "localhost")
+    dash_port=os.getenv("DASH_PORT", "8050")
+    debugging=os.getenv("DEBUGGING", "False")
+    app.run(jupyter_mode='external', debug=debugging.lower()=="true", host=dash_host, port=dash_port)
