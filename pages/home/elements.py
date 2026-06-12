@@ -21,5 +21,10 @@ def get_home_dashboard():
         html.Div([
             html.H2("Fatest lap per track"),
             static(id="fatest-laps")
-        ])
+        ]),
+
+        html.Div([
+            html.H2("Track map"),
+            static(id='track-map')
+        ]),
     ])

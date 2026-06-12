@@ -1,8 +1,10 @@
 from app import app
-from data import f1_data
-from dash import Input, Output
-
 import plotly.express as px
+from dash import Output
+
+from app import app
+from data import f1_data, tracks_coord
+
 
 @app.callback(
     Output("most-wins-title", "children"),
@@ -117,5 +119,20 @@ def update_graph():
     fig.update_traces(
         hovertemplate="Track : %{x}<br>Speed : %{y} km/h<br>Achieved by %{customdata[0]}<extra></extra>",
     )
+
+    return fig
+
+@app.callback(
+    Output("track-map", "figure"),
+)
+def update_graph():
+    fig = px.scatter_geo(tracks_coord,
+                         lat='lat',
+                         lon='lon',
+                         hover_name='track',
+                         projection='natural earth',
+                         )
+
+    fig.update_traces(marker=dict(size=8))
 
     return fig
