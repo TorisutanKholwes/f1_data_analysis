@@ -160,6 +160,10 @@ def update_graph(track, lap, lap_type):
         df,
         x='full_name',
         y='maxspeed',
+        labels={
+            'full_name': 'Driver',
+            'maxspeed': 'Max speed',
+        }
     )
 
     return fig
