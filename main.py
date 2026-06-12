@@ -29,7 +29,7 @@ def display_page(pathname):
 if __name__ == '__main__':
     dash_host=os.getenv("DASH_HOST", "localhost")
     dash_port=os.getenv("DASH_PORT", "8050")
-    debugging=os.getenv("DEBUGGING", "True")
+    debugging=os.getenv("DEBUGGING", "False")
     print("Launching app with the following configuration:")
     print(f"DASH_HOST: {dash_host}")
     print(f"DASH_PORT: {dash_port}")
