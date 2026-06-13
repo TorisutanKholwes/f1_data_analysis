@@ -7,3 +7,12 @@ This project is a data analysis of the Formula 1 2024 season, with the aim of cr
 The dashboard is created using Dash and Plotly, and is hosted on a personal VPS.
 
 You can access the dashboard [here](https://dash.torisutan.fr).
+
+If you are on Windows, you may have an error. You can fix it by modifying line 73 of data.py :
+
+```python
+# Original line
+track=x.split('/')[1].split('2')[0].replace('_', ' ')
+# Modified line
+track=x.split('\\')[1].split('2')[0].replace('_', ' ')
+```
